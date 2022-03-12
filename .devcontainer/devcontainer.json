@@ -20,8 +20,7 @@
 	"runArgs": [
 		"--cap-add=SYS_PTRACE",
 		"--security-opt",
-		"seccomp=unconfined",
-		"--net=host"
+		"seccomp=unconfined"
 	],
 	"mounts": [
 		"source=${localEnv:XAUTHORITY},target=/home/vscode/.Xauthority,type=bind,consistency=cached",
