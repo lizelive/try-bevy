@@ -10,17 +10,21 @@
 			"VARIANT": "bullseye"
 		}
 	},
+	"containerEnv": {
+		"NVIDIA_DRIVER_CAPABILITIES":"all",
+	},
 	"remoteEnv": {
 		// "PUID": "1000",
 		// "PGID": "1000",
-		"TZ": "Etc/Utc",
-		"KEYBOARD": "en-us-qwerty",
+		// "TZ": "Etc/Utc",
+		// "KEYBOARD": "en-us-qwerty",
 		"DISPLAY": "${localEnv:DISPLAY}"
 	},
 	"runArgs": [
 		"--cap-add=SYS_PTRACE",
-		"--security-opt",
-		"seccomp=unconfined"
+		"--security-opt", "seccomp=unconfined",
+		// "--device=/dev/dri:/dev/dri", "--privileged",
+		"--gpus", "all"
 	],
 	"mounts": [
 		"source=${localEnv:XAUTHORITY},target=/home/vscode/.Xauthority,type=bind,consistency=cached",
