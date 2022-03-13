@@ -12,7 +12,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     libxau6 libxdmcp6 libxcb1 libxext6 libx11-6 \
     libglvnd0 libgl1 libglx0 libegl1 libgles2 \
     libglvnd-dev libgl1-mesa-dev libegl1-mesa-dev libgles2-mesa-dev \
-    libglx-dev libgl1-mesa-glx mesa-utils
+    libglx-dev libgl1-mesa-glx libgl1-mesa-dri mesa-utils
 
 # ENV NVIDIA_VISIBLE_DEVICES \
 #         ${NVIDIA_VISIBLE_DEVICES:-all}
