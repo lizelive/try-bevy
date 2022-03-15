@@ -12,13 +12,15 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     libxau6 libxdmcp6 libxcb1 libxext6 libx11-6 \
     libglvnd0 libgl1 libglx0 libegl1 libgles2 \
     libglvnd-dev libgl1-mesa-dev libegl1-mesa-dev libgles2-mesa-dev \
-    libglx-dev libgl1-mesa-glx libgl1-mesa-dri mesa-utils
+    libglx-dev libgl1-mesa-glx libgl1-mesa-dri mesa-utils \
+    vulkan-tools libvulkan1 mesa-vulkan-drivers \
+    libx11-xcb-dev libxkbcommon-dev libwayland-dev libxrandr-dev libegl1-mesa-dev \
+    pulseaudio 
 
 # ENV NVIDIA_VISIBLE_DEVICES \
 #         ${NVIDIA_VISIBLE_DEVICES:-all}
-# ENV NVIDIA_DRIVER_CAPABILITIES \
-#         ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics,compat32,utility
-
+ENV NVIDIA_DRIVER_CAPABILITIES all
+# ENV XDG_RUNTIME_DIR=/run/user/1000
 # RUN  echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf && echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
     
 # ENV LD_LIBRARY_PATH /usr/lib/x86_64-linux-gnu:/usr/lib/i386-linux-gnu${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}:/usr/local/nvidia/lib:/usr/local/nvidia/lib64

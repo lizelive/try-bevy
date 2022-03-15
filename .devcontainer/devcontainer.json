@@ -10,9 +10,6 @@
 			"VARIANT": "bullseye"
 		}
 	},
-	"containerEnv": {
-		"NVIDIA_DRIVER_CAPABILITIES":"all",
-	},
 	"remoteEnv": {
 		// "PUID": "1000",
 		// "PGID": "1000",
